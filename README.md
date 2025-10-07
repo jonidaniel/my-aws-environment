@@ -53,18 +53,26 @@ Download a slideshow demonstration on the environment through this [link](https:
 Here's an exhaustive list of AWS services I've used:
 
 - Compute: `EC2`, `Lambda`
-- Storage: `S3`
-- Database: `RDS`, `Dynamo`
-- Network: `VPC`, `CloudFront`, `API Gateway`, `Route 53`
-- `EventBridge`, `SNS`
-- `CloudWatch`, `CloudTrail`, `CloudFormation`
-- Data: `Athena`
-- Management: `IAM`
+- Storage: `S3`, `EFS`
+- Databases: `RDS`, `Dynamo`
+- Networking and Content Delivery: `VPC`, `CloudFront`, `API Gateway`, `Route 53`
+- Application Integration: `EventBridge`, `SNS`
+- Management and Governance: `CloudWatch`, `CloudTrail`, `CloudFormation`, `Systems Manager`
+- Analytics: `Athena`
+- Security, Identity, and Compliance: `IAM`, `Certificate Manager`
+- Cloud Financial Management: `Budgets`
 - SDKs: `AWS SDK for JavaScript v2 & v3`, `Boto3`
+
+The environment contains code written in:
+
+- `JS`
+- `Python`
+- `HTML`
+- `CSS`
 
 ## Status
 
-- The environment and its applications are now operational and also under further development – new features are continuously developed
+- The environment and its applications are now operational and under further development – new features are published continuously
 
 ## License
 
@@ -72,5 +80,5 @@ Here's an exhaustive list of AWS services I've used:
 
 ## Credits
 
-- Date: Spring–summer–fall 2025\
+- Date: Spring–Summer–Fall 2025\
 - Author: Joni Mäkinen [@jonidaniel](https://github.com/jonidaniel)
