@@ -5,18 +5,19 @@
 This repository contains scripts I use in **my AWS environment.**\
 The scripts are categorized into directories _by service:_
 
-- Athena SQL queries `/athena/`,
-- EC2 instance user data scripts `/ec2/`,
-- Lambda functions in JS and Python `/lambda/`,
-- HTML and CSS files of websites and web apps stored in S3 buckets `/s3/`,
+- *Athena* SQL queries `/athena/`,
+- *EC2 instance* user data scripts `/ec2/`,
+- *Lambda functions* in JS and Python `/lambda/`,
+- *HTML and CSS files of websites and web apps* stored in S3 buckets `/s3/`,
 - and more.
 
-Note that the repo _doesn't work as a standalone executable,_ the scripts are merely copied here from their original context in AWS Cloud.
+Note that the repo _doesn't work as a standalone executable,_ the scripts are merely copied here from their original setting in AWS Cloud.\
+But don't worry, I've prepared an extensive slideshow demonstration of the environment for you to be able to understand the context fully.
+Download it through this [link (AWS S3)](https://my-aws-environment.s3.eu-north-1.amazonaws.com/my-aws-environment.pptx)
 
 ## Table of Contents:
 
 - [My AWS Environment](#my-aws-environment)
-- [Slideshow Demo](#slideshow-demo)
 - [About the Environment](#about-the-environment)
 - [Screenshots](#screenshots)
 - [AWS Services & Technologies](#aws-services-&-technologies)
@@ -24,10 +25,6 @@ Note that the repo _doesn't work as a standalone executable,_ the scripts are me
 - [Status](#status)
 - [Credits](#credits)
 - [License](#license)
-
-## Slideshow Demo:
-
-Download a slideshow demonstration on the environment through this [link](https://my-aws-environment.s3.eu-north-1.amazonaws.com/my-aws-environment.pptx) (AWS S3)
 
 ## About the Environment
 
