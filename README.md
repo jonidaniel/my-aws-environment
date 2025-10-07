@@ -1,4 +1,4 @@
-![Front image](/imgs/front-image.jpg?raw=true)
+![Front image](/assets/imgs/front-image.jpg?raw=true)
 
 # My AWS Environment
 
@@ -41,9 +41,14 @@ I built my own AWS environment utilizing many different AWS services
 
     - Different AWS services play together to form fully functioning applications in the cloud
 
-## Screenshots
+## Diagrams
 
-![](screenshots/ss01.png?raw=true)
+![IAM diagram](/assets/diagrams/iam-diagram.png?raw=true)
+![Static hosting diagram](/assets/diagrams/static-hosting.png?raw=true)
+![Request counting diagram](/assets/diagrams/request-counting.png?raw=true)
+![Email notification diagram](/assets/diagrams/email-notification.png?raw=true)
+![VPC diagram](/assets/diagrams/vpc.png?raw=true)
+![API Gateway with Lambda integration and DynamoDB connection diagram](/assets/diagrams/api-gateway-with-lambda-integration-and-dynamodb-connection.png?raw=true)
 
 ## AWS Services & Technologies
 
