@@ -31,11 +31,11 @@ Download it through this [link (AWS S3)](https://my-aws-environment.s3.eu-north-
 I built my own AWS environment utilizing many different AWS services
 
   - I migrated applicable parts of my already existing digital resources (e.g. web apps on Netlify, projects on GitHub) into AWS Cloud
-  - There are three main components I focused on migrating
+  - There are three main components I focused on migrating:
 
-    - My website jonimakinen.com
-    - A simple full stack app Translation Game
-    - An SPA study tracker on the web Curriculus
+    - My website: [jonimakinen.com](https://www.jonimakinen.com/)
+    - A simple full stack app: [Translation Game](http://13.61.165.26:3000)
+    - An SPA study tracker on the web: [Curriculus](https://curriculus.s3.eu-north-1.amazonaws.com/index.html)
 
   - I built microservice applications around these main components
 
