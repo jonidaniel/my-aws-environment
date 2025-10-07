@@ -1,0 +1,56 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+#text {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  color: white;
+  display: inline-block;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+.text-line {
+  color: mediumaquamarine;
+  padding-left: 5%;
+}
+#skill-stack {
+  color: darkkhaki;
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 5%;
+}
+#skill-line01 {
+  padding-left: 1%;
+}
+#skill-line02 {
+  padding-left: 2%;
+}
+#skill-line03 {
+  padding-left: 3%;
+}
+#skill-line04 {
+  padding-left: 4%;
+}
+#skill-line05 {
+  padding-left: 5%;
+}
+#skill-line06 {
+  padding-left: 6%;
+}
+#skill-line07 {
+  padding-left: 7%;
+}
+#skill-line08 {
+  padding-left: 8%;
+}
+#skill-line09 {
+  padding-left: 9%;
+}

@@ -1,0 +1,73 @@
+/* Styles for search container and search container 2 */
+
+.outer-search-container {
+  margin: auto;
+  position: relative;
+}
+
+.outer-search-container #inner-search-container {
+  display: inline-block;
+}
+
+.outer-search-container #input-value {
+  margin: 0;
+  text-align: left;
+}
+
+.outer-search-container #dropdown-container {
+  background-image: linear-gradient(#42a1ec, #0070c9);
+  border-radius: 7px;
+  box-shadow: 0 0 2px #999999;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+}
+
+.outer-search-container ul {
+  border-radius: 7px;
+  list-style-type: none;
+  margin: 0 5px 0 5px;
+  padding: 0;
+}
+
+#dropdown-container {
+  color: yellow;
+  cursor: pointer;
+  display: block;
+}
+
+.outer-search-container2 {
+  margin: auto;
+  position: relative;
+}
+
+.outer-search-container2 #inner-search-container2 {
+  display: inline-block;
+}
+
+.outer-search-container2 #input-value2 {
+  margin: 0;
+  text-align: left;
+}
+
+.outer-search-container2 #dropdown-container2 {
+  background-image: linear-gradient(#42a1ec, #0070c9);
+  border-radius: 7px;
+  box-shadow: 0 0 2px #999999;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+}
+
+.outer-search-container2 ul {
+  border-radius: 7px;
+  list-style-type: none;
+  margin: 0 5px 0 5px;
+  padding: 0;
+}
+
+#dropdown-container2 {
+  color: yellow;
+  cursor: pointer;
+  display: block;
+}

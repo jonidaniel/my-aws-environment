@@ -1,0 +1,95 @@
+@font-face {
+  font-family: Skopera;
+  src: url("../assets/fonts/skopera.otf");
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-1500px) scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(1500px) scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 719px) {
+  #text {
+    animation-name: fade-left;
+    animation-duration: 0.25s;
+    color: white;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 20%;
+  }
+  #text-line01 {
+    padding-left: 5%;
+  }
+  #text-line02 {
+    padding-left: 10%;
+  }
+  .highlight {
+    color: chartreuse;
+    font-family: "Skopera";
+    font-size: 20px;
+  }
+  .highlight-special-character {
+    color: chartreuse;
+    font-size: 20px;
+    font-style: bold;
+  }
+  #face-pic {
+    animation-name: fade-right;
+    animation-duration: 1s;
+    padding-top: 7%;
+    padding-left: 28%;
+    width: 40%;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 720px) {
+  #text {
+    animation-name: fade-left;
+    animation-duration: 0.25s;
+    color: white;
+    display: inline-block;
+    padding-left: 10%;
+  }
+  #text-line01 {
+    padding-left: 5%;
+  }
+  #text-line02 {
+    padding-left: 10%;
+  }
+  .highlight {
+    color: chartreuse;
+    font-family: "Skopera";
+    font-size: 20px;
+  }
+  .highlight-special-character {
+    color: chartreuse;
+    font-size: 20px;
+    font-style: bold;
+  }
+  #face-pic {
+    animation-name: fade-right;
+    animation-duration: 1s;
+    padding-top: 12%;
+    padding-left: 1%;
+    width: 20%;
+  }
+}

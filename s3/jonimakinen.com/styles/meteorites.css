@@ -1,0 +1,38 @@
+a {
+  text-wrap: nowrap;
+}
+#content {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  color: white;
+  padding-top: 10%;
+  padding-left: 10%;
+  width: 80%;
+}
+.header {
+  display: inline;
+}
+#map-intro {
+  width: 90%;
+}
+#map1,
+#map2,
+#map3 {
+  width: 90%;
+  aspect-ratio: 1/0.75;
+}
+.header-link {
+  color: deepskyblue;
+  font-size: 24px;
+}
+.small-text {
+  display: inline;
+  font-size: 11px;
+}
+.link {
+  color: deepskyblue;
+}
+iframe {
+  width: 90%;
+  aspect-ratio: 1/0.5;
+}

@@ -1,0 +1,25 @@
+/* Styles for base components */
+
+body {
+  background-color: lightblue;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#header {
+  font-size: 40px;
+}
+
+#content-left {
+  float: left;
+  width: 50%;
+}
+
+#content-right {
+  float: right;
+  width: 50%;
+}
+
+#footer {
+  padding-top: 50px;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Data Science Project</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/mywork.css" />
+  <link rel="stylesheet" href="../styles/meteorites.css" />
+  <link rel="stylesheet" href="../styles/carousel.css" />
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <!-- Shapefile.js -->
+  <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script>
+  <body>
+    <div id="nav-bar">
+      <a class="nav-bar-tab" href="../index.html">Home</a>
+      <a class="nav-bar-tab" href="../about/en.html">About</a>
+      <a class="nav-bar-tab" href="../myresume/en.html">My Resume</a>
+      <a class="nav-bar-tab" id="current-tab" href="./en.html">My Work</a>
+      <a class="nav-bar-tab" href="../contact/en.html">Contact</a>
+      <a class="nav-bar-tab" href="./meteorites-fi.html">Suomeksi</a>
+    </div>
+    <p id="requests">Total requests: 0</p>
+    <div id="content">
+      <h1 class="header">
+        Data Science Project:<br />Meteorite Geospatial Data Visualization
+        <h3 class="header">(NASA data)</h3>
+        <br />
+        <h3 class="header">September 2025</h3>
+      </h1>
+      <ul id="map-intro">
+        <li>
+          The following maps show witnessed meteorite data. Only meteors that
+          were detected in the atmosphere and whose landing coordinates were
+          calculated or found out in some other way are shown. Meteorites that
+          were found afterwards aren't included.
+        </li>
+        <br />
+        <li>
+          Change between maps with the left and right arrows or with the spots
+          below the map. Use the +/- buttons in the top left corner to zoom the
+          map in and out. Click on the markers to see information on each
+          meteorite.
+        </li>
+      </ul>
+      <br />
+      <div class="slideshow-container">
+        <div class="map fade">
+          <div class="numbertext">1 / 3</div>
+          <div id="map1"></div>
+          <div class="text">All meteorite locations</div>
+        </div>
+        <div class="map fade">
+          <div class="numbertext">2 / 3</div>
+          <div id="map2"></div>
+          <div class="text">Mean of Meteorite Locations</div>
+        </div>
+        <div class="map fade">
+          <div class="numbertext">3 / 3</div>
+          <div id="map3"></div>
+          <div class="text">Weighted Mean of Meteorite Locations</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br />
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <br />
+      <h2>
+        Behind the map visualization underlies a specific two-part data science
+        process. The first part of the process is handled by a
+        <a class="header-link" href="https://www.python.org/" target="_blank"
+          >Python<img
+            id="new-tab-icon"
+            src="../assets/imgs/other/new-tab-icon.png"
+            alt="Hyperlink opens in a new tab"
+        /></a>
+        script executed as a scheduled once-a-month
+        <a
+          class="header-link"
+          href="https://aws.amazon.com/pm/lambda/?trk=de176e44-77b1-4b50-b198-3c2e10a6ca9d&sc_channel=ps&ef_id=Cj0KCQjwrc7GBhCfARIsAHGcW5VRMktL85p0X-llNrf8ypfAQKXQxy1w2IuPfxtkn9gTK-QUYs-NAbwaAgcVEALw_wcB:G:s&s_kwcid=AL!4422!3!651612776834!e!!g!!aws%20lambda!19835810525!147081599717&gad_campaignid=19835810525&gbraid=0AAAAADjHtp-pLe4wI0OVp6i_zNvsEpMtN&gclid=Cj0KCQjwrc7GBhCfARIsAHGcW5VRMktL85p0X-llNrf8ypfAQKXQxy1w2IuPfxtkn9gTK-QUYs-NAbwaAgcVEALw_wcB"
+          target="_blank"
+          >AWS Lambda<img
+            id="new-tab-icon"
+            src="../assets/imgs/other/new-tab-icon.png"
+            alt="Hyperlink opens in a new tab"
+        /></a>
+        function:
+      </h2>
+      <ol>
+        <li>
+          First a
+          <a
+            id="downloadable"
+            href="https://data.nasa.gov/docs/legacy/meteorite_landings/Meteorite_Landings.csv"
+            download=""
+            >NASA meteorite dataset</a
+          >
+          <p class="small-text">(.csv)</p>
+          is downloaded.
+        </li>
+        <br />
+        <li>
+          Then a
+          <a
+            class="link"
+            href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html"
+            target="_blank"
+            >Pandas DataFrame<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          is formed from the downloaded dataset.
+        </li>
+        <br />
+        <li>
+          Next up comes data wrangling, where unnecessary columns and rows are
+          removed from the DataFrame
+          <p class="small-text">
+            (because some rows have null values for latitude and/or longitude).
+          </p>
+        </li>
+        <br />
+        <li>
+          Then a
+          <a
+            class="link"
+            href="https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html"
+            target="_blank"
+            >GeoPandas GeoDataFrame<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          is constructed from the DataFrame.
+        </li>
+        <br />
+        <li>
+          A
+          <a
+            class="link"
+            href="https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+            target="_blank"
+            >Shapefile<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          is then created from the GeoDataFrame. Note that Shapefiles aren't
+          really files but rather groups of files. This particular Shapefile
+          consists of 4 different files
+          <p class="small-text">(.cpg, .dbf, .shp, .shx),</p>
+          that are compressed into an Archive
+          <p class="small-text">(.zip)</p>
+          that's stored in an
+          <a
+            class="link"
+            href="https://aws.amazon.com/s3/?trk=ce49796d-d34f-4675-8b39-c03f20060438&sc_channel=ps&ef_id=Cj0KCQjwrc7GBhCfARIsAHGcW5Vyt3bOHJ5Qk6oNtzX_SK8NT1Qd0URTmYlhsyzAcBqf-v4Ayy1G2vgaAkZeEALw_wcB:G:s&s_kwcid=AL!4422!3!536452769228!e!!g!!aws%20s3!12198535626!120978772550&trk=b45f363b-5d02-4b3f-87df-b7b1908ff05c&sc_channel=ps&targetid=kwd-20982008831&gad_campaignid=12198535626&gbraid=0AAAAADjHtp8i4noRbOySalLDG6-KEYUwh&gclid=Cj0KCQjwrc7GBhCfARIsAHGcW5Vyt3bOHJ5Qk6oNtzX_SK8NT1Qd0URTmYlhsyzAcBqf-v4Ayy1G2vgaAkZeEALw_wcB"
+            target="_blank"
+            >AWS S3<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          bucket.
+        </li>
+        <br />
+      </ol>
+      <h2>
+        The latter part is done by a user's web browser every time it requests
+        the webpage you're reading right now:
+      </h2>
+      <ol start="6">
+        <li>
+          A JS script constructs a
+          <a class="link" href="https://leafletjs.com/" target="_blank"
+            >Leaflet<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          map and adds a Google Satellite tile layer to it.
+        </li>
+        <br />
+        <li>
+          The Shapefile stored in S3 is then fetched using
+          <a
+            class="link"
+            href="https://github.com/calvinmetcalf/shapefile-js"
+            target="_blank"
+            >Shapefile.js,<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          which, in one fell swoop, converts it into
+          <a class="link" href="https://geojson.org/" target="_blank"
+            >GeoJSON.<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          The GeoJSON consists of Points
+          <p class="small-text">
+            (here: meteorite information about to be inserted to the map).
+          </p>
+        </li>
+        <br />
+        <li>Finally, the GeoJSON is added to the map as a layer.</li>
+      </ol>
+      <br />
+      <h2>
+        The following is an interactive
+        <a
+          class="header-link"
+          href="https://www.microsoft.com/en-us/power-platform/products/power-bi"
+          target="_blank"
+          >Power BI<img
+            id="new-tab-icon"
+            src="../assets/imgs/other/new-tab-icon.png"
+            alt="Hyperlink opens in a new tab"
+        /></a>
+        bar chart visualization of witnessed meteorites by year (1900–2013).
+      </h2>
+      <br />
+      <iframe
+        title="Meteorites by Year (1900–2013)"
+        src="https://app.powerbi.com/view?r=eyJrIjoiN2I5YzU0MmMtMGIzZC00NWQ4LWI1ZGUtZDI0OTZjY2MxMjBhIiwidCI6ImYwYjllOWQ3LThkNjYtNGIxNi05YzFjLTZiMDdjNDc5NjI4MCIsImMiOjh9"
+        frameborder="0"
+        allowfullscreen="true"
+      ></iframe>
+    </div>
+    <script src="../scripts/map.js"></script>
+    <script src="../scripts/carousel.js"></script>
+  </body>
+</html>

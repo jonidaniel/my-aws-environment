@@ -1,0 +1,1 @@
+CREATE DATABASE `access_logs_db`;

@@ -1,0 +1,169 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+#text {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  color: white;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+#text-line01-explanation01,
+#text-line01-explanation02,
+#text-line02-explanation01,
+#text-line02-explanation02,
+#text-line03-explanation01,
+#text-line03-explanation02,
+#text-line04-explanation01,
+#text-line04-explanation02,
+#text-line05-explanation01,
+#text-line05-explanation02,
+#text-line06-explanation01,
+#text-line06-explanation02,
+#text-line07-explanation01,
+#text-line07-explanation02,
+#text-line08-explanation01,
+#text-line08-explanation02,
+#text-line09-explanation01,
+#text-line09-explanation02,
+#text-line10-explanation01,
+#text-line10-explanation02,
+#text-line11-explanation01,
+#text-line11-explanation02 {
+  font-size: 10px;
+  padding-right: 20%;
+}
+#text-line01 {
+  color: deepskyblue;
+  padding-left: 5%;
+}
+#text-line01-explanation01 {
+  padding-left: 6%;
+}
+#text-line01-explanation02 {
+  padding-left: 7%;
+}
+#downloadable {
+  color: chartreuse;
+}
+#text-line02 {
+  color: deepskyblue;
+  padding-left: 8%;
+}
+#text-line02-explanation01 {
+  padding-left: 9%;
+}
+#text-line02-explanation02 {
+  padding-left: 10%;
+}
+#text-line03 {
+  color: deepskyblue;
+  padding-left: 11%;
+}
+#text-line03-explanation01 {
+  padding-left: 12%;
+}
+#text-line03-explanation02 {
+  padding-left: 13%;
+}
+#text-line04 {
+  color: deepskyblue;
+  padding-left: 14%;
+}
+#text-line04-explanation01 {
+  padding-left: 15%;
+}
+#text-line04-explanation02 {
+  padding-left: 16%;
+}
+#text-line05 {
+  color: deepskyblue;
+  padding-left: 17%;
+}
+#text-line05-explanation01 {
+  padding-left: 18%;
+}
+#text-line05-explanation02 {
+  padding-left: 19%;
+}
+#text-line06 {
+  color: deepskyblue;
+  padding-left: 20%;
+}
+#text-line06-explanation01 {
+  padding-left: 21%;
+}
+#text-line06-explanation02 {
+  padding-left: 22%;
+}
+#text-line07 {
+  color: deepskyblue;
+  padding-left: 23%;
+}
+#text-line07-explanation01 {
+  padding-left: 24%;
+}
+#text-line07-explanation02 {
+  padding-left: 25%;
+}
+#text-line08 {
+  color: deepskyblue;
+  padding-left: 26%;
+}
+#text-line08-explanation01 {
+  padding-left: 27%;
+}
+#text-line08-explanation02 {
+  padding-left: 28%;
+}
+#text-line09 {
+  color: deepskyblue;
+  padding-left: 29%;
+}
+#text-line09-explanation01 {
+  padding-left: 30%;
+}
+#text-line09-explanation02 {
+  padding-left: 31%;
+}
+#text-line10 {
+  color: deepskyblue;
+  padding-left: 32%;
+}
+#text-line10-explanation01 {
+  padding-left: 33%;
+}
+#text-line10-explanation02 {
+  padding-left: 34%;
+}
+#text-line11 {
+  color: deepskyblue;
+  padding-left: 35%;
+}
+#text-line11-explanation01 {
+  padding-left: 36%;
+}
+#text-line11-explanation02 {
+  padding-left: 37%;
+}
+#text-line12 {
+  padding-left: 10%;
+  padding-right: 20%;
+}
+#hyperlink-github-bundle {
+  display: inline-block;
+}
+#hyperlink-github {
+  color: deepskyblue;
+}
+#new-tab-icon {
+  width: 15px;
+}

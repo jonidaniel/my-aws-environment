@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Datatiedeprojekti</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/mywork.css" />
+  <link rel="stylesheet" href="../styles/meteorites.css" />
+  <link rel="stylesheet" href="../styles/carousel.css" />
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <!-- Shapefile.js -->
+  <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script>
+  <body>
+    <div id="nav-bar">
+      <a class="nav-bar-tab" href="../fi.html">Etusivu</a>
+      <a class="nav-bar-tab" href="../about/fi.html">Tietoa</a>
+      <a class="nav-bar-tab" href="../myresume/fi.html">CV</a>
+      <a class="nav-bar-tab" id="current-tab" href="./fi.html">Töitäni</a>
+      <a class="nav-bar-tab" href="../contact/fi.html">Ota yhteyttä</a>
+      <a class="nav-bar-tab" href="./meteorites-en.html">In English</a>
+    </div>
+    <p id="requests">Pyyntöjä yhteensä: 0</p>
+    <div id="content">
+      <h1 class="header">
+        Datatiedeprojekti:<br />Geospatiaalisen meteoriittidatan
+        havainnollistaminen
+        <h3 class="header">(NASA:n dataa)</h3>
+        <br />
+        <h3 class="header">Syyskuu 2025</h3>
+      </h1>
+      <ul id="map-intro">
+        <li>
+          Alla olevat kartat näyttävät dataa todistetuista meteoriiteista.
+          Kartoissa näytetään vain meteoriitit jotka havaittiin ilmakehässä
+          meteoreina tai joiden laskeutumiskoordinaatit voitiin laskea tai
+          selvittää muilla tavoin. Jälkikäteen löydetyt meteoriitit eivät
+          sisälly karttaan.
+        </li>
+        <br />
+        <li>
+          Vaihda karttojen välillä käyttäen sivuttaisnuolia tai kartan alta
+          löytyviä pallukoita. Käytä vasemmasta yläkulmasta löytyviä +/-
+          -näppäimiä lähentääksesi tai loitontaaksesi karttaa. Klikkaa
+          markkereita nähdäksesi tietoa kustakin meteoriitista.
+        </li>
+      </ul>
+      <br />
+      <div class="slideshow-container">
+        <div class="map fade">
+          <div class="numbertext">1 / 3</div>
+          <div id="map1"></div>
+          <div class="text">Kaikki meteoriitit</div>
+        </div>
+        <div class="map fade">
+          <div class="numbertext">2 / 3</div>
+          <div id="map2"></div>
+          <div class="text">Meteoriittien sijaintien keskiarvo</div>
+        </div>
+        <div class="map fade">
+          <div class="numbertext">3 / 3</div>
+          <div id="map3"></div>
+          <div class="text">Meteoriittien sijaintien painotettu keskiarvo</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      <br />
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <br />
+      <h2>
+        Karttahavainnollistuksen taustalla on erityinen kaksiosainen
+        datatiedeprosessi. Prosessin ensimmäisestä osasta vastaa kuukausittain
+        <a
+          class="header-link"
+          href="https://aws.amazon.com/pm/lambda/?trk=de176e44-77b1-4b50-b198-3c2e10a6ca9d&sc_channel=ps&ef_id=Cj0KCQjwrc7GBhCfARIsAHGcW5VRMktL85p0X-llNrf8ypfAQKXQxy1w2IuPfxtkn9gTK-QUYs-NAbwaAgcVEALw_wcB:G:s&s_kwcid=AL!4422!3!651612776834!e!!g!!aws%20lambda!19835810525!147081599717&gad_campaignid=19835810525&gbraid=0AAAAADjHtp-pLe4wI0OVp6i_zNvsEpMtN&gclid=Cj0KCQjwrc7GBhCfARIsAHGcW5VRMktL85p0X-llNrf8ypfAQKXQxy1w2IuPfxtkn9gTK-QUYs-NAbwaAgcVEALw_wcB"
+          target="_blank"
+          >AWS Lambda<img
+            id="new-tab-icon"
+            src="../assets/imgs/other/new-tab-icon.png"
+            alt="Hyperlink opens in a new tab"
+        /></a>
+        -funktiona suoritettava
+        <a class="header-link" href="https://www.python.org/" target="_blank"
+          >Python<img
+            id="new-tab-icon"
+            src="../assets/imgs/other/new-tab-icon.png"
+            alt="Hyperlink opens in a new tab" /></a
+        >-skripti:
+      </h2>
+      <ol>
+        <li>
+          Ensin skripti lataa
+          <a
+            id="downloadable"
+            href="https://data.nasa.gov/docs/legacy/meteorite_landings/Meteorite_Landings.csv"
+            download=""
+            >NASA:n meteoriittidatasetin</a
+          >
+          <p class="small-text">(.csv).</p>
+        </li>
+        <br />
+        <li>
+          Seuraavaksi datasetistä rakennetaan
+          <a
+            class="link"
+            href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html"
+            target="_blank"
+            >Pandas DataFrame.<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+        </li>
+        <br />
+        <li>
+          Sitten dataa jalostetaan poistamalla DataFramesta tarpeettomat
+          sarakkeet ja rivit
+          <p class="small-text">
+            (jotkin rivit sisältävät null-tyyppisiä leveysaste- ja/tai
+            pituusastearvoja).
+          </p>
+        </li>
+        <br />
+        <li>
+          Tämän jälkeen DataFramesta muodostetaan
+          <a
+            class="link"
+            href="https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html"
+            target="_blank"
+            >GeoPandas GeoDataFrame.<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+        </li>
+        <br />
+        <li>
+          GeoDataFramen pohjalta luodaan
+          <a
+            class="link"
+            href="https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf"
+            target="_blank"
+            >Shapefile.<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          Huomaa, että Shapefile ei tarkalleen ottaen ole tiedosto vaan ryhmä
+          tiedostoja. Kyseessä oleva Shapefile koostuu neljästä eri tiedostosta
+          <p class="small-text">(.cpg, .dbf, .shp, .shx),</p>
+          jotka ovat kompressoitu Archiveksi
+          <p class="small-text">(.zip).</p>
+          Archive talletetaan
+          <a
+            class="link"
+            href="https://aws.amazon.com/s3/?trk=ce49796d-d34f-4675-8b39-c03f20060438&sc_channel=ps&ef_id=Cj0KCQjwrc7GBhCfARIsAHGcW5Vyt3bOHJ5Qk6oNtzX_SK8NT1Qd0URTmYlhsyzAcBqf-v4Ayy1G2vgaAkZeEALw_wcB:G:s&s_kwcid=AL!4422!3!536452769228!e!!g!!aws%20s3!12198535626!120978772550&trk=b45f363b-5d02-4b3f-87df-b7b1908ff05c&sc_channel=ps&targetid=kwd-20982008831&gad_campaignid=12198535626&gbraid=0AAAAADjHtp8i4noRbOySalLDG6-KEYUwh&gclid=Cj0KCQjwrc7GBhCfARIsAHGcW5Vyt3bOHJ5Qk6oNtzX_SK8NT1Qd0URTmYlhsyzAcBqf-v4Ayy1G2vgaAkZeEALw_wcB"
+            target="_blank"
+            >AWS S3<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          -ämpäriin.
+        </li>
+        <br />
+      </ol>
+      <h2>
+        Jälkimmäisen osan hoitaa käyttäjän verkkoselain aina sen pyytäessä juuri
+        lukemaasi verkkosivua:
+      </h2>
+      <ol start="6">
+        <li>
+          Ensiksi verkkosivulle kirjoitettu JS-skripti rakentaa
+          <a class="link" href="https://leafletjs.com/" target="_blank"
+            >Leaflet<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab" /></a
+          >-kartan ja lisää siihen Googlen Satellite -tile layerin.
+        </li>
+        <br />
+        <li>
+          Sitten S3:een tallettu Shapefile noudetaan käyttäen
+          <a
+            class="link"
+            href="https://github.com/calvinmetcalf/shapefile-js"
+            target="_blank"
+            >Shapefile.js:ää,<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          joka samalla konvertoi Shapefilen
+          <a class="link" href="https://geojson.org/" target="_blank"
+            >GeoJSON:ksi.<img
+              id="new-tab-icon"
+              src="../assets/imgs/other/new-tab-icon.png"
+              alt="Hyperlink opens in a new tab"
+          /></a>
+          GeoJSON sisältää Pointeja
+          <p class="small-text">
+            (tässä: karttaan pian lisättäviä meteoriittitietoja).
+          </p>
+        </li>
+        <br />
+        <li>Lopulta GeoJSON lisätään karttaan layerinä.</li>
+      </ol>
+      <br />
+      <h2>
+        Seuraava kuvio on interaktiivinen
+        <a
+          class="header-link"
+          href="https://www.microsoft.com/en-us/power-platform/products/power-bi"
+          target="_blank"
+          >Power BI<img
+            id="new-tab-icon"
+            src="../assets/imgs/other/new-tab-icon.png"
+            alt="Hyperlink opens in a new tab"
+        /></a>
+        -pylväskaavioesitys todistettujen meteoriittien vuosittaisista määristä
+        (1900–2013).
+      </h2>
+      <br />
+      <iframe
+        title="Meteorites by Year (1900–2013)"
+        src="https://app.powerbi.com/view?r=eyJrIjoiN2I5YzU0MmMtMGIzZC00NWQ4LWI1ZGUtZDI0OTZjY2MxMjBhIiwidCI6ImYwYjllOWQ3LThkNjYtNGIxNi05YzFjLTZiMDdjNDc5NjI4MCIsImMiOjh9"
+        frameborder="0"
+        allowfullscreen="true"
+      ></iframe>
+    </div>
+    <script src="../scripts/map.js"></script>
+    <script src="../scripts/carousel.js"></script>
+  </body>
+</html>

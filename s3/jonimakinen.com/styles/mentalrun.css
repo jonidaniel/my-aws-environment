@@ -1,0 +1,177 @@
+/* Everything under the width of 800 pixels is considered mobile use */
+
+body {
+  margin: 0px;
+  font-family: Arial;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.grid-item {
+  border: 1px solid white;
+  text-align: center;
+}
+.header {
+  height: 140px;
+  /* background-image: url(../images/mental-run/header-background.png) no-repeat
+    right 0px; */
+}
+.navigation-bar {
+  background-color: black;
+  text-align: center;
+  line-height: 1;
+}
+.navigation-bar a {
+  padding: 0px 10px;
+}
+a {
+  text-decoration: none;
+  color: deepskyblue;
+}
+.navigation-bar a:hover {
+  color: antiquewhite;
+}
+.pictures {
+  margin: auto;
+}
+/* This site has three different sized screenshots which are displayed at different times
+   Left, second left, second right and right refer to the four small sized screenshots */
+.left {
+  display: inline;
+}
+.second-left {
+  display: inline;
+}
+.second-right {
+  display: none;
+}
+.right {
+  display: none;
+}
+.middle-sized-pictures {
+  display: none;
+}
+.large-pictures {
+  display: none;
+}
+.trailer iframe {
+  width: 90%;
+  height: 280px;
+}
+.description {
+  text-align: left;
+  padding: 0px 20px;
+}
+.team-members {
+  padding: 0px 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: inline;
+  float: left;
+  padding: 4px;
+}
+.partners {
+  padding: 0px 20px;
+}
+
+/* This definition is in effect if the screen width is 390px minimum */
+@media screen and (min-width: 390px) {
+  .second-right {
+    display: inline;
+  }
+}
+
+/* This definition is in effect if the screen width is 520px minimum */
+@media screen and (min-width: 520px) {
+  .right {
+    display: inline;
+  }
+}
+
+/* These definitions are in effect if the screen width is 800px minimum
+   For example, this is when a grid system is brought into use */
+@media screen and (min-width: 800px) {
+  /* Small pictures disappear and middle sized pictures appear */
+  .left {
+    display: none;
+  }
+  .second-left {
+    display: none;
+  }
+  .second-right {
+    display: none;
+  }
+  .right {
+    display: none;
+  }
+  .middle-sized-pictures {
+    display: inline;
+  }
+  /* Small headers are center aligned when the grid is used */
+  h3 {
+    text-align: center;
+  }
+
+  /* These are the grid definitions
+     The grid consists of four columns and six rows */
+  .grid-container {
+    display: grid;
+    /* This defines that the grid is divided into four equally wide columns */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* This defines that all of the grid's rows are a minimum of 50 pixels high and their maximum height is set to auto,
+       which means that their maximum height is defined by their contents
+       There are a total of six rows in the grid
+       This is defined later in the grid's items' definitions */
+    grid-auto-rows: minmax(50px, auto);
+  }
+  .header {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+  .navigation-bar {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+  }
+  .navigation-bar a {
+    padding: 0px 50px;
+  }
+  .pictures {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+  }
+  .trailer {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    /* This sets the trailer embed horizontally and vertically in the center of its own grid cell */
+    margin: auto;
+    width: 90%;
+  }
+  .description {
+    grid-column: 3 / 5;
+    grid-row: 4 / 5;
+  }
+  .team-members {
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
+  }
+  .partners {
+    grid-column: 1 / 5;
+    grid-row: 6 / 7;
+  }
+}
+
+/* These definitions are in effect if the screen width is 1185px minimum */
+@media screen and (min-width: 1185px) {
+  /* Middle sized pictures disappear and large pictures appear */
+  .middle-sized-pictures {
+    display: none;
+  }
+  .large-pictures {
+    display: inline;
+  }
+}
