@@ -65,10 +65,10 @@ Here's an exhaustive list of AWS services I've used:
 
 The environment contains code written in:
 
-- `JS`
-- `Python`
-- `HTML`
-- `CSS`
+- `JS` (Lambda functions, client-side scripts)
+- `Python` (Lambda functions)
+- `HTML` (static webpages)
+- `CSS` (webpage styling)
 
 ## Status
 
