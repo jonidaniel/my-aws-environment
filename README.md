@@ -43,11 +43,28 @@ I built my own AWS environment utilizing many different AWS services
 
 ## Diagrams
 
+### IAM
+
 ![IAM diagram](/assets/diagrams/iam-diagram.png?raw=true)
+
+### Static Hosting
+
 ![Static hosting diagram](/assets/diagrams/static-hosting.png?raw=true)
+
+### Request Counting
+
 ![Request counting diagram](/assets/diagrams/request-counting.png?raw=true)
+
+### Email Notification
+
 ![Email notification diagram](/assets/diagrams/email-notification.png?raw=true)
+
+### VPC
+
 ![VPC diagram](/assets/diagrams/vpc.png?raw=true)
+
+### API Gateway with Lambda Integration and DynamoDB Connection
+
 ![API Gateway with Lambda integration and DynamoDB connection diagram](/assets/diagrams/api-gateway-with-lambda-integration-and-dynamodb-connection.png?raw=true)
 
 ## AWS Services & Technologies
