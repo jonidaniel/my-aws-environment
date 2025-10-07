@@ -31,7 +31,7 @@ Download a slideshow demonstration on the environment through this [link](https:
 
 ## About the Environment
 
-- I built my own AWS environment utilizing many different AWS services
+I built my own AWS environment utilizing many different AWS services
 
   - I migrated applicable parts of my already existing digital resources (e.g. web apps on Netlify, projects on GitHub) into AWS Cloud
   - There are three main components I focused on migrating
@@ -72,13 +72,13 @@ The environment contains code written in:
 
 ## Status
 
-- The environment and its applications are now operational and under further development – new features are published continuously
+The environment and its applications are now operational and under further development – new features are published continuously
 
 ## License
 
-- MIT license
+MIT license
 
 ## Credits
 
-- Date: Spring–Summer–Fall 2025\
-- Author: Joni Mäkinen [@jonidaniel](https://github.com/jonidaniel)
+Date: Spring–Summer–Fall 2025\
+Author: Joni Mäkinen [@jonidaniel](https://github.com/jonidaniel)
