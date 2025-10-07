@@ -2,7 +2,7 @@
 
 # My AWS Environment
 
-This repository contains scripts I use in my AWS environment.\
+This repository contains scripts I use in **my AWS environment.**\
 The scripts are categorized into directories _by service:_
 
 - Athena SQL queries `/athena/`,
