@@ -1,3 +1,5 @@
+![Front image](/imgs/front-image.jpg?raw=true)
+
 # My AWS Environment
 
 - Scripts categorized by services in my AWS account:
